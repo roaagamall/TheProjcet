@@ -2,6 +2,10 @@
 package com.sales.model;
 
 public class Item {
+
+
+
+    
  
     private String item;
     private double price;
@@ -28,6 +32,10 @@ public class Item {
     }
 
     public Item(String itemName, double price, int count, Invoice inv) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Item(Item item, double price, int count, Invoice invoice) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     public double getItemTotal(){
@@ -67,6 +75,8 @@ public class Item {
         return invoice;
     }
     
-    
+    public String getAsCSV() {
+        return invoice.getNumber() + "," + item + "," + price + "," + count ;
+         }
     
 }

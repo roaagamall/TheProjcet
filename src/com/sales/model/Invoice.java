@@ -66,5 +66,10 @@ public class Invoice {
         return "Invoice{" + "number=" + number + ", date=" + date + ", customer=" + customer + ", items=" + items + '}';
     }
 
+
+    public String getAsCSV() {
+         return number +"," + date + "," + customer;
+    }
+
     
 }

@@ -13,10 +13,6 @@ public class ItemsTableModel extends AbstractTableModel{
     public ItemsTableModel(ArrayList<Item> items) {
         this.items = items;
     }
-
-    public ItemsTableModel(ArrayList<Item> items) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 
     @Override
@@ -45,6 +41,10 @@ public class ItemsTableModel extends AbstractTableModel{
             case 4: return item.getItemTotal();
             default : return "";
         }
-        }
+    } 
+
+    public Object getItems() {
+        return items;
+      }
     
 }
