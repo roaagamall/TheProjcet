@@ -181,7 +181,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="InvoiceTable.getSelectionModel().addListSelectionListener(controller);"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodePost" type="java.lang.String" value="InvoiceTable.getSelectionModel().addListSelectionListener(controller);&#xd;&#xa;InvoiceTable.setModel(getInvoicesTableModel());"/>
           </AuxValues>
         </Component>
       </SubComponents>

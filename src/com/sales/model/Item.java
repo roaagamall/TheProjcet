@@ -75,7 +75,7 @@ public class Item {
         return invoice;
     }
     
-    public String getAsCSV() {
+    public  String getAsCSV() {
         return invoice.getNumber() + "," + item + "," + price + "," + count ;
          }
     

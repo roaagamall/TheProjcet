@@ -24,6 +24,7 @@ public class Myframe extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         InvoiceTable = new javax.swing.JTable();
         InvoiceTable.getSelectionModel().addListSelectionListener(controller);
+        InvoiceTable.setModel(getInvoicesTableModel());
         createinvoiceButton = new javax.swing.JButton();
         createinvoiceButton.addActionListener(controller);
         deleteinvoiceButton = new javax.swing.JButton();
@@ -281,6 +282,9 @@ private InvoicesTableModel invoicesTableModel;
     }
 
     public InvoicesTableModel getInvoicesTableModel() {
+        if(invoicesTableModel == null){
+           invoicesTableModel = new InvoicesTableModel(getInvoices());
+        }
         return invoicesTableModel;
     }
 
@@ -336,6 +340,10 @@ private InvoicesTableModel invoicesTableModel;
     }
        return ++num;
      
+    }
+
+    public Object InvoiceTable() {
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 
   

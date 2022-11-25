@@ -161,18 +161,16 @@ public class Controller implements ActionListener, ListSelectionListener{
         ArrayList<Invoice> invoices = frame.getInvoices();
         String headers = "";
         String items = "";
-        String itemCSV = null;
         for (Invoice invoice : invoices) {
             String invCSV = invoice.getAsCSV();
             headers += invCSV;
             headers += "\n";
 
             for (Item item : invoice.getItems()) {
-          
-                itemCSV = Item.getAsCSV();
-                items += itemCSV;
-                items += "\n";
-                
+                String itemCSV = item.getAsCSV();
+                     items += itemCSV;
+                     items += "\n";
+             
             }
         }
         System.out.println("Check point");
@@ -201,13 +199,15 @@ public class Controller implements ActionListener, ListSelectionListener{
     }
 
     private void delete() {
-       int selectedRow = frame.getItemTable().getSelectedRow();
+        int selectedInv = frame.getInvoiceTable().getSelectedRow();
+        int selectedRow = frame.getItemTable().getSelectedRow();
 
-        if (selectedRow != -1) {
-            ItemsTableModel itemsTableModel = (ItemsTableModel) frame.getItemTable().getModel();
-            itemsTableModel.getItems().remove(selectedRow);
+        if (selectedInv != -1 && selectedRow != -1) {
+            Invoice invoice = frame.getInvoices().get(selectedInv);
+            invoice.getItems().remove(selectedRow);
+            ItemsTableModel itemsTableModel = new ItemsTableModel(invoice.getItems());
+            frame.getItemTable().setModel(itemsTableModel);
             itemsTableModel.fireTableDataChanged();
-            frame.getInvoicesTableModel().fireTableDataChanged();
         }
          
     }
@@ -279,6 +279,10 @@ public class Controller implements ActionListener, ListSelectionListener{
         itemDialog.dispose();
         itemDialog = null;
         }
+
+    private Object itemsTableModel() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 }
