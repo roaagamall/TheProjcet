@@ -320,9 +320,7 @@ private InvoicesTableModel invoicesTableModel;
         return controller;
     }
 
-    public Object getInvoiceNumberLabel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     public Object getInvoiceCustomerLabel() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -332,7 +330,7 @@ private InvoicesTableModel invoicesTableModel;
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
- public int getNextInvoiceNumber(){
+ public int getNextInvoiceNum(){
   int num = 0;
   for (Invoice invoice : invoices){
       if(invoice.getNumber()> num) 

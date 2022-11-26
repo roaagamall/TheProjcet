@@ -236,7 +236,7 @@ public class Controller implements ActionListener, ListSelectionListener{
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String date = invoiceDialog.getInvDateField().getText();
         String customer = invoiceDialog.getCustNameField().getText();
-        int num = frame.getNextInvoiceNumber();
+        int num = frame.getNextInvoiceNum();
         try{
             Date invDate = df.parse(date);
             Invoice invoice = new Invoice(num, date, customer);
