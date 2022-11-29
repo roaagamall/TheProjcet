@@ -39,6 +39,7 @@ public class InvoicesTableModel extends AbstractTableModel{
             case 2: return invoice.getCustomer();
             case 3: return invoice.getInvoiceTotal();
             default : return "";
+          
         }
         }
     

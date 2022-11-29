@@ -45,34 +45,34 @@ public class Controller implements ActionListener, ListSelectionListener{
             String actionCommand = e.getActionCommand();
             System.out.println("Action: "+ actionCommand);
             switch(actionCommand){
-                case"lf":
+                case"Loadfile":
                     loadfile();
                     break;
-                case"sf":
+                case"Savefile":
                     savefile();
                     break;
-                case"cni":
+                case"Create New Invoice":
                     createnewinvoice();
                     break;
-                case"di":
+                case"Delete Invoice":
                     deleteinvoice();
                     break;
-                case"c":
+                case"Create":
                     create();
                     break;
-                case"d":
+                case"Delete":
                     delete();
                     break;
-                case"cnio":
+                case"createInvoiceOK":
                     createInvoiceOk();
                     break;
-                case"cnic":
+                case"createInvoiceCancel":
                     createInvoiceCancel();
                     break;
-                case"cIO":
+                case"createOk":
                     createItemOk();
                     break;
-                case"cIC":
+                case"createCancel":
                     createCancel();
                     break;
             }
@@ -88,8 +88,8 @@ public class Controller implements ActionListener, ListSelectionListener{
         System.out.println("you have selected row: " + SelectedIndex);
         Invoice currentInvoice = frame.getInvoices().get(SelectedIndex);
         frame.getInvoiceNumLabel().setText(""+currentInvoice.getNumber());
-        frame.getInvoiceDateLabel().setText(""+currentInvoice.getDate());
-        frame.getCustomerNameLabel().setText(""+currentInvoice.getCustomer());
+        frame.getInvoiceDateLabel().setText(currentInvoice.getDate());
+        frame.getCustomerNameLabel().setText(currentInvoice.getCustomer());
         frame.getInvoiceTotalLabel().setText(""+currentInvoice.getInvoiceTotal());
         ItemsTableModel itemsTableModel = new ItemsTableModel(currentInvoice.getItems());
         frame.getItemTable().setModel(itemsTableModel);

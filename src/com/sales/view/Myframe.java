@@ -22,9 +22,9 @@ public class Myframe extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        InvoiceTable = new javax.swing.JTable();
-        InvoiceTable.getSelectionModel().addListSelectionListener(controller);
-        InvoiceTable.setModel(getInvoicesTableModel());
+        invoiceTable = new javax.swing.JTable();
+        invoiceTable.getSelectionModel().addListSelectionListener(controller);
+        invoiceTable.setModel(getInvoicesTableModel());
         createinvoiceButton = new javax.swing.JButton();
         createinvoiceButton.addActionListener(controller);
         deleteinvoiceButton = new javax.swing.JButton();
@@ -34,7 +34,7 @@ public class Myframe extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        ItemTable = new javax.swing.JTable();
+        itemTable = new javax.swing.JTable();
         InvoiceNumLabel = new javax.swing.JLabel();
         InvoiceDateLabel = new javax.swing.JLabel();
         CustomerNameLabel = new javax.swing.JLabel();
@@ -52,18 +52,15 @@ public class Myframe extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        InvoiceTable.setModel(new javax.swing.table.DefaultTableModel(
+        invoiceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane1.setViewportView(InvoiceTable);
+        jScrollPane1.setViewportView(invoiceTable);
 
         createinvoiceButton.setText("Create New Invoice");
 
@@ -82,18 +79,15 @@ public class Myframe extends javax.swing.JFrame {
 
         jLabel4.setText("Invoice Total");
 
-        ItemTable.setModel(new javax.swing.table.DefaultTableModel(
+        itemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
-        jScrollPane2.setViewportView(ItemTable);
+        jScrollPane2.setViewportView(itemTable);
 
         createButton.setText("Create");
         createButton.addActionListener(new java.awt.event.ActionListener() {
@@ -250,13 +244,13 @@ public class Myframe extends javax.swing.JFrame {
     private javax.swing.JLabel CustomerNameLabel;
     private javax.swing.JLabel InvoiceDateLabel;
     private javax.swing.JLabel InvoiceNumLabel;
-    private javax.swing.JTable InvoiceTable;
     private javax.swing.JLabel InvoiceTotalLabel;
-    private javax.swing.JTable ItemTable;
     private javax.swing.JButton createButton;
     private javax.swing.JButton createinvoiceButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JButton deleteinvoiceButton;
+    private javax.swing.JTable invoiceTable;
+    private javax.swing.JTable itemTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -305,7 +299,7 @@ private InvoicesTableModel invoicesTableModel;
     }
 
     public JTable getInvoiceTable() {
-        return InvoiceTable;
+        return invoiceTable;
     }
 
     public JLabel getInvoiceTotalLabel() {
@@ -313,7 +307,7 @@ private InvoicesTableModel invoicesTableModel;
     }
 
     public JTable getItemTable() {
-        return ItemTable;
+        return itemTable;
     }
 
     public Controller getController() {

@@ -3,10 +3,11 @@ package com.sales.view;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class ItemDialog {
+public class ItemDialog extends JDialog {
     
     private JTextField itemNameField;
     private JTextField itemCountField;
@@ -69,24 +70,19 @@ public class ItemDialog {
          }
 
     private void setLayout(GridLayout gridLayout) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+         }
 
     private void add(JLabel itemNameLbl) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        }
 
     private void add(JTextField itemCountField) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+         }
 
-    private void pack() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void pack() {
+         }
 
     private void add(JButton cancelBtn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+         }
 
     public Object getPriceField() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

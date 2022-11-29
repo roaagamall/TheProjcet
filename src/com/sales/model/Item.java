@@ -7,7 +7,7 @@ public class Item {
 
     
  
-    private String item;
+    private String itemName;
     private double price;
     private int count;
     private Invoice invoice;
@@ -18,22 +18,21 @@ public class Item {
 
     public Item(String item, double price, int count) {
         
-        this.item = item;
+        this.itemName = item;
         this.price = price;
         this.count = count;
     }
 
-    public Item(int number, String item, double price, int count, Invoice invoice) {
+    public Item(int number, String itemName, double price, int count, Invoice invoice) {
        
-        this.item = item;
+        this.itemName = itemName;
         this.price = price;
         this.count = count;
         this.invoice = invoice;
     }
 
-    public Item(String itemName, double price, int count, Invoice inv) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Item(String item, double price, int count, Invoice inv) {
+         }
 
     public Item(Item item, double price, int count, Invoice invoice) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -50,12 +49,12 @@ public class Item {
     }
 
 
-    public String getItem() {
-        return item;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     public double getPrice() {
@@ -68,7 +67,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item{" + "number=" + invoice.getNumber() + ", item=" + item + ", price=" + price + ", count=" + count + '}';
+        return "Item{" + "number=" + invoice.getNumber() + ", item=" + itemName + ", price=" + price + ", count=" + count + '}';
     }
 
     public Invoice getInvoice() {
@@ -76,7 +75,9 @@ public class Item {
     }
     
     public  String getAsCSV() {
-        return invoice.getNumber() + "," + item + "," + price + "," + count ;
+        return invoice.getNumber() + "," + itemName + "," + price + "," + count ;
          }
+
+   
     
 }
