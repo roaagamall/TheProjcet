@@ -31,8 +31,8 @@ public class ItemDialog extends JDialog {
         okBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");
         
-        okBtn.setActionCommand("createOK");
-        cancelBtn.setActionCommand("createCancel");
+        okBtn.setActionCommand("OKK");
+        cancelBtn.setActionCommand("CANCEL");
         
         okBtn.addActionListener(frame.getController());
         cancelBtn.addActionListener(frame.getController());
@@ -64,33 +64,9 @@ public class ItemDialog extends JDialog {
 
    
 
-    public void setVisible(boolean b) {
-       
-        
-         }
+   
 
-    private void setLayout(GridLayout gridLayout) {
-         }
-
-    private void add(JLabel itemNameLbl) {
-        }
-
-    private void add(JTextField itemCountField) {
-         }
-
-    public void pack() {
-         }
-
-    private void add(JButton cancelBtn) {
-         }
-
-    public Object getPriceField() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void dispose() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
 }
 
 

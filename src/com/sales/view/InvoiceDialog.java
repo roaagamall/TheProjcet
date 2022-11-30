@@ -9,7 +9,7 @@ import javax.swing.JTextField;
 
 public class InvoiceDialog extends JDialog {
     
-    private JTextField custNameField;
+    private JTextField customerNameField;
     private JTextField invDateField;
     private JLabel custNameLbl;
     private JLabel invDateLbl;
@@ -18,7 +18,7 @@ public class InvoiceDialog extends JDialog {
 
     public InvoiceDialog(Myframe frame) {
         custNameLbl = new JLabel("Customer Name:");
-        custNameField = new JTextField(20);
+        customerNameField = new JTextField(20);
         invDateLbl = new JLabel("Invoice Date:");
         invDateField = new JTextField(20);
         okBtn = new JButton("OK");
@@ -34,7 +34,7 @@ public class InvoiceDialog extends JDialog {
         add(invDateLbl);
         add(invDateField);
         add(custNameLbl);
-        add(custNameField);
+        add(customerNameField);
         add(okBtn);
         add(cancelBtn);
         
@@ -42,8 +42,8 @@ public class InvoiceDialog extends JDialog {
         
     }
 
-    public JTextField getCustNameField() {
-        return custNameField;
+    public JTextField getCustomerNameField() {
+        return customerNameField;
     }
 
     public JTextField getInvDateField() {

@@ -69,10 +69,10 @@ public class Controller implements ActionListener, ListSelectionListener{
                 case"createInvoiceCancel":
                     createInvoiceCancel();
                     break;
-                case"createOk":
+                case"OKK":
                     createItemOk();
                     break;
-                case"createCancel":
+                case"CANCEL":
                     createCancel();
                     break;
             }
@@ -91,10 +91,12 @@ public class Controller implements ActionListener, ListSelectionListener{
         frame.getInvoiceDateLabel().setText(currentInvoice.getDate());
         frame.getCustomerNameLabel().setText(currentInvoice.getCustomer());
         frame.getInvoiceTotalLabel().setText(""+currentInvoice.getInvoiceTotal());
+         System.out.println("Check point");
         ItemsTableModel itemsTableModel = new ItemsTableModel(currentInvoice.getItems());
         frame.getItemTable().setModel(itemsTableModel);
         itemsTableModel.fireTableDataChanged();
         }
+         System.out.println("success process");
     }
     
     
@@ -151,7 +153,9 @@ public class Controller implements ActionListener, ListSelectionListener{
             }
         }catch(IOException ex){
             ex.printStackTrace(); 
-        }   
+            JOptionPane.showMessageDialog(frame, "Error in line format", "Error", JOptionPane.ERROR_MESSAGE);
+        }  
+         System.out.println("Check point");
     }
 
     
@@ -235,7 +239,7 @@ public class Controller implements ActionListener, ListSelectionListener{
     private void createInvoiceOk() {
         DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         String date = invoiceDialog.getInvDateField().getText();
-        String customer = invoiceDialog.getCustNameField().getText();
+        String customer = invoiceDialog.getCustomerNameField().getText();
         int num = frame.getNextInvoiceNum();
         try{
             Date invDate = df.parse(date);
@@ -267,12 +271,15 @@ public class Controller implements ActionListener, ListSelectionListener{
         int selectedInvoice = frame.getInvoiceTable().getSelectedRow();
         if (selectedInvoice != -1) {
             Invoice invoice = frame.getInvoices().get(selectedInvoice);
-            Item item = new Item(itemName, price, count, invoice);
-            invoice.getItems().add(item);
-            ItemsTableModel linesTableModel = (ItemsTableModel) frame.getItemTable().getModel();
-            linesTableModel.fireTableDataChanged();
+            Item item1 = new Item(itemName, price, count, invoice);
+            invoice.getItems().add(item1);
+            ItemsTableModel itemsTableModel = (ItemsTableModel) frame.getItemTable().getModel();
+            itemsTableModel.fireTableDataChanged();
             frame.getInvoicesTableModel().fireTableDataChanged();
         }
+        itemDialog.setVisible(false);
+        itemDialog.dispose();
+        itemDialog = null;
     }
     private void createCancel() {
         itemDialog.setVisible(false);
@@ -280,9 +287,7 @@ public class Controller implements ActionListener, ListSelectionListener{
         itemDialog = null;
         }
 
-    private Object itemsTableModel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
 
 }

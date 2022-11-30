@@ -16,14 +16,9 @@ public class Item {
     public Item() {
     }
 
-    public Item(String item, double price, int count) {
-        
-        this.itemName = item;
-        this.price = price;
-        this.count = count;
-    }
+   
 
-    public Item(int number, String itemName, double price, int count, Invoice invoice) {
+    public Item(String itemName, double price, int count, Invoice invoice) {
        
         this.itemName = itemName;
         this.price = price;
@@ -31,12 +26,7 @@ public class Item {
         this.invoice = invoice;
     }
 
-    public Item(String item, double price, int count, Invoice inv) {
-         }
-
-    public Item(Item item, double price, int count, Invoice invoice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+ 
     public double getItemTotal(){
      return price * count;
     }
